@@ -1,15 +1,11 @@
 const express = require('express')
+const {getHomepage, getABD} = require(`../controllers/homeController`)
 const router = express.Router()
 
 //Khai báo route
-router.get('/', (req, res) => {
-    res.send('Helđâlo World!')
-  })
+router.get('/', getHomepage)
   
-  router.get('/abd', (req, res) => {
-      // res.send('Trần Minh Hiếu!')
-      res.render('sample.ejs')
-    })
+  router.get('/abd', getABD)
 
 module.exports = router
 // Export default
